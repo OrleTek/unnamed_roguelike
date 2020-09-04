@@ -1,0 +1,46 @@
+[package]
+name = "unnamed-rogulike"
+version = "0.1.0"
+authors = [
+    "Brian Bruggeman <1350114+brianbruggeman@users.noreply.github.com>",
+    ""
+]
+edition = "2018"
+
+[workspace]
+members = [
+    "crates/*"
+]
+
+
+[[bin]]
+name = "rl"
+path = "src/bin/rl.rs"
+
+
+[dependencies]
+placeholder = { path = "crates/placeholder" }
+
+
+[profile.dev]
+opt-level = 0
+overflow-checks = true
+debug-assertions = true
+panic = "abort"
+debug = false
+codegen-units = 17
+lto = false
+incremental = true
+
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+debug = false
+overflow-checks = false
+debug-assertions = false
+panic = "abort"
+# This improves performance slightly
+# This reduces binary size
+# This adds a lot of compilation time
+codegen-units = 1
