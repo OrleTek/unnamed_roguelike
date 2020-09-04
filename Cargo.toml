@@ -1,7 +1,7 @@
 [package]
 name = "unnamed-rogulike"
 version = "0.1.0"
-authors = [
+authors = ["Tom Kellett <thessalikon@live.co.uk>",
     "Brian Bruggeman <1350114+brianbruggeman@users.noreply.github.com>",
     ""
 ]
@@ -17,9 +17,13 @@ members = [
 name = "rl"
 path = "src/bin/rl.rs"
 
-
 [dependencies]
-placeholder = { path = "crates/placeholder" }
+bevy = "0.1.3"
+display = { path = "crates/display" }
+
+[[example]]
+name = "set-terminal"
+path = "examples/set-terminal/set-terminal.rs"
 
 
 [profile.dev]
